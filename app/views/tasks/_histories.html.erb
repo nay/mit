@@ -1,0 +1,16 @@
+<div class="history">
+  <ul>
+  <% date = Date.today %>
+  <% 10.times do %>
+    <li>
+      <% if @day.created_on == date %>
+        <%= date.to_s(:db) %>
+      <% else %>
+        <% path = date == Date.today ? root_path : daily_tasks_path(:year => date.year, :month => date.month, :day => date.day) %>
+        <%= link_to date.to_s(:db), path %>
+      <% end %>
+    </li>
+    <% date -= 1 %>
+  <% end %>
+  </ul>
+</div>

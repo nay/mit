@@ -1,0 +1,9 @@
+<%= render 'histories' %>
+
+<div class="main">
+<h1><%= @day.created_on.to_s(:db) %>のタスク</h1>
+
+<%= render 'tasks' %>
+</div>
+
+<div class="clear" />

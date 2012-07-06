@@ -1,0 +1,14 @@
+<div class="main">
+<h1>今日のタスク</h1>
+
+<%= form_for @day, :url => today_tasks_path, :method => :put do |f| %>
+<ul>
+  <%= f.fields_for :tasks, @day.tasks do |tasks| %>
+    <li><%= tasks.text_field :name, :size => 80 %></li>
+  <% end %>
+</ul>
+
+<div><%= submit_tag '更新' %>  <%= link_to '戻る', root_path %></div>
+<% end %>
+
+</div>

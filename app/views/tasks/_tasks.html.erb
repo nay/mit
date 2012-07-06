@@ -1,0 +1,10 @@
+<% if @day.tasks.empty? %>
+<p>タスクが登録されていません。</p>
+<% else %>
+<ul>
+  <% @day.tasks.each do |t| %>
+    <% next if t.name.blank? %>
+  <li><span class="task-status" id="task_<%= t.id %>"><%= t.formatted_status %></span> <%= t.name %></li>
+  <% end %>
+</ul>
+<% end %>

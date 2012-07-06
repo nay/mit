@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyText
+  created_on: 2012-07-05
+  lifework: false
+  status: MyString
+
+two:
+  name: MyText
+  created_on: 2012-07-05
+  lifework: false
+  status: MyString
