@@ -1,9 +1,9 @@
 Mit::Application.routes.draw do
   root :to => "tasks#index"
-  get 'tasks/:year/:month/:day' => "tasks#daily", :constrains => {
-    :year => /^[0-9]+$/,
-    :month => /^(12|11|10|[1-9])$/,
-    :day => /^[1-3]?[0-9]$/
+  get 'tasks/:year/:month/:day' => "tasks#daily", :constraints => {
+    :year => /[0-9]+/,
+    :month => /(12|11|10|[1-9])/,
+    :day => /[1-3]?[0-9]/
     }, :as => :daily_tasks
   get 'today/edit' => "tasks#edit_today", :as => :edit_today_tasks
   put 'today' => "tasks#update_today", :as => :today_tasks
